@@ -14,7 +14,7 @@
               <a href="<?= ('inclusions'); ?>" class="bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Inclusions</a>
               <a href="<?= ('inquire'); ?>" class="hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Inquire</a>
               <a href="<?= ('/moodboardPage'); ?>" class="bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Moodboard</a>
-              <a href="<?= ('roadmap'); ?>" class="hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Roadmap</a>
+              <a href="<?= ('/roadmapPage'); ?>" class="hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Roadmap</a>
 
           </nav>
           <!-- Mobile Menu Button -->
@@ -28,10 +28,10 @@
           <a href="<?= ('inclusions'); ?>" class="block hover:bg-gray-100 px-6 py-3 border-gray-200 border-b text-gray-800">Inclusions</a>
           <a href="<?= ('inquiry'); ?>" class="block hover:bg-gray-100 px-6 py-3 border-gray-200 border-b text-gray-800">Inquiry</a>
           <a href="<?= ('moodboardPage'); ?>" class="block hover:bg-gray-100 px-6 py-3 border-gray-200 border-b text-gray-800">Moodboard</a>
-          <a href="<?= ('roadmap'); ?>" class="block hover:bg-gray-100 px-6 py-3 border-gray-200 border-b text-gray-800">Roadmap</a>
+          <a href="<?= ('roadmapPage'); ?>" class="block hover:bg-gray-100 px-6 py-3 border-gray-200 border-b text-gray-800">Roadmap</a>
 
       </div>
   </header>
 
 
-  <div class="h-5"></div>
+  <div class="h-6"></div>
