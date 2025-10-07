@@ -24,6 +24,5 @@
           <a href="#inquiry" class="block hover:bg-gray-100 px-6 py-3 text-gray-800">Inquiry</a>
       </div>
   </header>
-  <!-- Spacer -->
-  <div class="h-20"></div>
-  <!-- Hero Section -->
+
+  <!-- Spacer <div class="h-20"></div> -->

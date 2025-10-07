@@ -45,15 +45,11 @@
             <p class="mb-8 text-gray-700">
                 Escape from the noise — reconnect with nature where the signal fades and peace begins.
             </p>
-            <img src="<?= ('assets/images/map-placeholder.jpg'); ?>" alt="Map" class="shadow-md mx-auto rounded-lg w-full md:w-2/3">
+            <img src="<?= ('assets/images/maps.png'); ?>" alt="Map" class="shadow-md mx-auto rounded-lg w-full md:w-2/3">
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-hunter py-6 text-gray-100 text-center" style="background-color:#355E3B;">
-        <p class="mb-2 font-semibold">Batis Point</p>
-        <p class="text-gray-200 text-sm">© <?= date('Y'); ?> All rights reserved.</p>
-    </footer>
+    <?= view('components/footer'); ?>
     <!-- Mobile Menu Script -->
     <script>
         const menuBtn = document.getElementById('menuBtn');
