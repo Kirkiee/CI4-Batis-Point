@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Batis Point | Your Private Camping Escape</title>
+=======
+    <title>Batis Points | Your Private Camping Escape</title>
+>>>>>>> parent of 69ee3ae (missage)
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
