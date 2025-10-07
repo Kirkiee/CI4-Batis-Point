@@ -3,7 +3,7 @@
       <div class="flex justify-between items-center mx-auto px-6 py-3 max-w-6xl">
           <!-- Logo Placeholder -->
           <div class="flex items-center space-x-3">
-              <img src="<?= ('assets/images/logo-placeholder.png'); ?>" alt="Batis Point Logo" class="rounded-full w-10 h-10 object-cover">
+              <img src="<?= ('assets/images/logo.jpg'); ?>" alt="Batis Point Logo" class="rounded-full w-12 h-12 object-cover">
               <span class="font-bold text-hunter text-xl" style="color:#355E3B;">Batis Point</span>
           </div>
           <!-- Navigation Links -->
@@ -24,6 +24,5 @@
           <a href="#inquiry" class="block hover:bg-gray-100 px-6 py-3 text-gray-800">Inquiry</a>
       </div>
   </header>
-  <!-- Spacer -->
-  <div class="h-20"></div>
-  <!-- Hero Section -->
+
+  <!-- Spacer <div class="h-20"></div> -->
