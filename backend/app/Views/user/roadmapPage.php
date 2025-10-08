@@ -1,105 +1,127 @@
 <?php
-// Page: user/road_map
+// Page: user/roadmapPage.php
 ?>
 <!doctype html>
 <html lang="en">
 
-<?= view('components/head') ?>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Road Map | Batis Point</title>
 
-<body class="bg-white font-sans text-slate-900">
-    <?= view('components/header', ['active' => 'Road map']) ?>
+    <!-- ✅ Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        citrine: '#E3B505',
+                        forest: '#1A4314',
+                        stone: '#D6D6D6',
+                        lightstone: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        subtle: '0 2px 6px rgba(0, 0, 0, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
 
-    <main class="mx-auto px-6 py-12 max-w-5xl">
+<?= view('components/header') ?>
+
+<body class="bg-white font-sans text-slate-800">
+    <main class="mx-auto max-w-6xl px-6 py-12">
         <!-- Header -->
-        <header class="mb-8">
-            <h1 class="text-3xl font-bold text-[#1A4314]">Road map</h1>
-            <p class="text-gray-600 mt-1">High-level plan and status for upcoming features.</p>
+        <header class="mb-12">
+            <h1 class="text-3xl font-bold text-forest tracking-tight">Road Map</h1>
+            <p class="text-slate-600 mt-1">A visual overview of features currently planned and in progress.</p>
         </header>
 
-        <section class="mb-8">
-            <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
-                <?= view('components/cards/card', ['title' => 'Admin Dashboard', 'excerpt' => 'Allows admins to edit rates and update gallery', 'image' => null]) ?>
-                <?= view('components/cards/card', ['title' => 'Service CRUD', 'excerpt' => 'Add, Update, and Remove certain inclusions or rates.', 'image' => null]) ?>
-                <?= view('components/cards/card', ['title' => 'Client inquiry', 'excerpt' => 'Lets clients make inquiries 
-                ', 'image' => null]) ?>
-                <?= view('components/cards/card', ['title' => 'Request CRUD', 'excerpt' => 'Lets clients Add, Update, Delete certain inquires', 'image' => null]) ?>
-                <?= view('components/cards/card', ['title' => 'Waze Connection ', 'excerpt' => 'Add Waze to landing page', 'image' => null]) ?>
+        <!-- Filter -->
+        <div class="flex justify-end mb-6">
+            <select id="statusFilter"
+                class="border border-stone bg-white rounded-lg text-sm px-3 py-1.5 focus:ring-2 focus:ring-citrine focus:outline-none">
+                <option value="all">All</option>
+                <option value="planned">Planned</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+                <option value="backlog">Backlog</option>
+            </select>
+        </div>
 
+        <!-- Roadmap Grid -->
+        <section id="roadmapList" class="relative grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Road Path (background arrows / road lines) -->
+            <div class="absolute inset-0 z-0 flex items-center justify-center">
+                <div
+                    class="hidden md:block h-full w-px bg-gradient-to-b from-citrine via-stone to-forest opacity-30 pointer-events-none">
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="relative z-10 col-span-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <?= view('components/cards/roadmap_cards', [
+                    'title' => 'Admin Dashboard',
+                    'excerpt' => 'Allows admins to manage rates, edit listings, and update gallery.',
+                    'priority' => 'High',
+                    'status' => 'Done'
+                ]) ?>
+
+                <?= view('components/cards/roadmap_cards', [
+                    'title' => 'Service CRUD',
+                    'excerpt' => 'Add, update, or remove service rates and descriptions.',
+                    'priority' => 'High',
+                    'status' => 'In Progress'
+                ]) ?>
+
+                <?= view('components/cards/roadmap_cards', [
+                    'title' => 'Client Inquiry System',
+                    'excerpt' => 'Lets clients send inquiries or feedback easily through the platform.',
+                    'priority' => 'Medium',
+                    'status' => 'Planned'
+                ]) ?>
+
+                <?= view('components/cards/roadmap_cards', [
+                    'title' => 'Request CRUD',
+                    'excerpt' => 'Allows clients to modify or delete their inquiries after submission.',
+                    'priority' => 'Low',
+                    'status' => 'Planned'
+                ]) ?>
+
+                <?= view('components/cards/roadmap_cards', [
+                    'title' => 'Waze Integration',
+                    'excerpt' => 'Enables direct navigation from the landing page to Batis Point’s location.',
+                    'priority' => 'Low',
+                    'status' => 'Backlog'
+                ]) ?>
             </div>
         </section>
     </main>
 
-    <?= view('components/footer', [
-        'copyright' => 'Batis Point — CI4 Roadmap',
-        'links' => [
-            ['label' => 'Services', 'href' => '/services'],
-            ['label' => 'Mood board', 'href' => '/mood-board'],
-            ['label' => 'Road map', 'href' => '/road-map']
-        ]
-    ]) ?>
-
     <script>
-        // Status filter logic
+        // Filtering Logic
         (function() {
             const select = document.getElementById('statusFilter');
+            const cards = document.querySelectorAll('#roadmapList [data-status]');
 
-            function normalize(s) {
-                return String(s || '').trim().toLowerCase();
-            }
-
-            select.addEventListener('change', function(e) {
-                const v = normalize(e.target.value);
-                document.querySelectorAll('#roadmapList [data-status]').forEach(el => {
-                    const s = normalize(el.dataset.status);
-                    el.style.display = (v === 'all' || s === v) ? '' : 'none';
+            select.addEventListener('change', function() {
+                const value = this.value.toLowerCase();
+                cards.forEach(card => {
+                    const status = card.dataset.status.toLowerCase();
+                    card.style.display = (value === 'all' || status === value) ? '' : 'none';
                 });
             });
         })();
     </script>
-
-    <style>
-        /* Typography + Colors */
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-        }
-
-        /* Status badges (ready to apply manually) */
-        .status-badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            display: inline-block;
-            text-transform: capitalize;
-        }
-
-        .status-backlog {
-            background-color: #D1D5DB;
-            color: #374151;
-        }
-
-        .status-planned {
-            background-color: #E5E7EB;
-            color: #4B5563;
-        }
-
-        .status-in-progress {
-            background-color: #E3B505;
-            color: #1A1A1A;
-        }
-
-        .status-done {
-            background-color: #1A4314;
-            color: #FFFFFF;
-        }
-
-        /* Subtle divider lines for visual grouping */
-        hr {
-            border: none;
-            border-top: 1px solid #E5E7EB;
-            margin: 2rem 0;
-        }
-    </style>
 </body>
+
+<?= view('components/footer') ?>
 
 </html>
