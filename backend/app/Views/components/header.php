@@ -15,7 +15,6 @@
               <a href="<?= ('inquire'); ?>" class="hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Inquire</a>
               <a href="<?= ('/moodboardPage'); ?>" class="bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Moodboard</a>
               <a href="<?= ('/roadmapPage'); ?>" class="hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Roadmap</a>
-
           </nav>
           <!-- Mobile Menu Button -->
           <button id="menuBtn" class="md:hidden focus:outline-none text-hunter" style="color:#355E3B;">
@@ -34,4 +33,4 @@
   </header>
 
 
-  <div class="h-6"></div>
+  <div class="h-8"></div>
