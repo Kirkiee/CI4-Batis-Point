@@ -7,9 +7,25 @@
     <title>Batis Point | Mood Board</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --bp-forest-dark: #1F3D2A;
+            --bp-forest: #355E3B;
+            --bp-forest-light: #8CBF75;
+            --bp-citrine-dark: #C2A800;
+            --bp-citrine: #E4D00A;
+            --bp-citrine-light: #F7EFA4;
+            --bp-neutral-dark: #7A7A7A;
+            --bp-neutral: #D9D9D9;
+        }
+
         body {
             font-family: Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
+            color: var(--bp-forest);
+        }
+
+        h1 {
+            color: var(--bp-forest);
         }
     </style>
 </head>
@@ -81,30 +97,26 @@
         </div>
 
         <!-- Buttons -->
-        <div class="mb-16">
-            <h2 class="text-xl font-semibold mb-4">Buttons</h2>
-
-            <!-- Light Mode -->
-            <p class="mb-2 font-medium text-gray-700">Light Mode</p>
-            <div class="flex flex-wrap gap-4 mb-6">
-                <button class="bg-[#355E3B] text-white px-4 py-2 rounded-md font-medium">Primary</button>
-                <button class="bg-[#E4D00A] text-gray-900 px-4 py-2 rounded-md font-medium">Secondary</button>
-                <button class="border border-gray-400 text-gray-700 px-4 py-2 rounded-md font-medium">Border</button>
-                <button class="bg-gray-300 text-gray-500 px-4 py-2 rounded-md font-medium cursor-not-allowed">Disabled</button>
+        <section class="mb-8">
+            <h2 class="mb-4 font-semibold text-lg">Buttons</h2>
+            <div class="space-y-4">
+                <h3>Light Mode</h3>
+                <div class="flex items-center space-x-4">
+                    <?= view('components/buttons/button_primary', ['label' => 'Primary', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_secondary', ['label' => 'Secondary', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_border', ['label' => 'Border', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_primary', ['label' => 'Disabled', 'href' => '#', 'disable' => true]) ?>
+                </div>
+                <h3>Dark Mode</h3>
+                <div class="flex items-center space-x-4 bg-stone-700 p-4 w-fit">
+                    <?= view('components/buttons/button_primary', ['label' => 'Primary', 'href' => '#', 'dark' => true, 'disable' => false]) ?>
+                    <?= view('components/buttons/button_secondary', ['label' => 'Secondary', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_border', ['label' => 'Border', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_primary', ['label' => 'Disabled', 'href' => '#', 'disable' => true]) ?>
+                </div>
+                <p class="text-gray-500 text-sm">Primary for main CTAs, secondary for supportive actions, border for subtle actions, disabled for unavailable states.</p>
             </div>
-
-            <!-- Dark Mode -->
-            <p class="mb-2 font-medium text-gray-700">Dark Mode</p>
-            <div class="flex flex-wrap gap-4 bg-gray-800 p-6 rounded-lg">
-                <button class="bg-[#355E3B] text-white px-4 py-2 rounded-md font-medium">Primary</button>
-                <button class="bg-[#E4D00A] text-gray-900 px-4 py-2 rounded-md font-medium">Secondary</button>
-                <button class="border border-[#E4D00A] text-[#E4D00A] px-4 py-2 rounded-md font-medium">Border</button>
-                <button class="bg-gray-600 text-gray-400 px-4 py-2 rounded-md font-medium cursor-not-allowed">Disabled</button>
-            </div>
-
-            <p class="text-xs text-gray-600 mt-2">Primary for main CTAs, secondary for supportive actions, border for subtle actions, disabled for unavailable states.</p>
-        </div>
-
+        </section>
         <!-- Card Samples -->
         <section class="mb-8">
             <h2 class="mb-4 font-semibold text-lg">Card sample</h2>
