@@ -27,7 +27,7 @@
         <h2 class="text-2xl font-bold text-center mb-6 text-hunter" style="color:#355E3B;">Admin Login</h2>
 
         <!-- Login Form -->
-        <form action="<?= base_url('admin/loginPage'); ?>" method="post" class="space-y-5">
+        <form action="<?= ('employeeCreationPage'); ?>" method="post" class="space-y-5">
             <div>
                 <label class="block text-gray-700 font-medium mb-2">Username</label>
                 <input type="text" name="username" required placeholder="Enter your username"
