@@ -4,8 +4,8 @@
 <br/>
 
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+  <a href="https://github.com/Kirkiee">
+    <img src="backend/public/assets/img/logo.jpg" alt="Nyebe" width="130" height="100">
   </a>
 <!-- * Title Section -->
   <h3 align="center">AD - CI4 Template</h3>
@@ -13,13 +13,12 @@
 
 <!-- * Description Section -->
 <div align="center">
-This repository is a beginner-friendly CodeIgniter 4 template.  
-It helps teams quickly bootstrap backend + frontend projects, with simple sample modules that show how to extend the system.
+This repository contains the source for my "Batis Point" website. It implements a functional camping site built with CodeIgniter 4 with the following core functionalities: Admin Dashboard with management and employee assignment, simple calendar system to view available booking dates, gallery, inquiry, service scheduling, and inclusions. 
 </div>
 
 <br/>
 
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/ci4-template)
+![](https://visit-counter.vercel.app/counter.png?page=Kirkiee/CI4-Batis-Point)
 
 <!-- ! Make sure it was similar to your github -->
 
@@ -220,9 +219,6 @@ AD-ProjectName/
 | ----------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | ChatGPT                 | General AI assistance for planning application architecture and docs. | [https://chat.openai.com](https://chat.openai.com)                         |
 | GitHub Copilot          | In-IDE code suggestions and boilerplate generation.                   | [https://github.com/features/copilot](https://github.com/features/copilot) |
-| YouTube “UI/UX Design”  | Video tutorials on modern web interface layouts and patterns.         | [https://www.youtube.com](https://www.youtube.com)                         |
-| Pinterest Design Boards | Inspiration for color schemes, typography, and component layouts.     | [https://www.pinterest.com](https://www.pinterest.com)                     |
-| Google Photos (Assets)  | Stock imagery and graphics used in UI mockups and documentation.      | [https://photos.google.com](https://photos.google.com)                     |
-| System Documentation    | Internal docs from PHP, MongoDB, and PostgreSQL used in development.  | — (see `/docs` folder in repo)                                             |
+
 
 <!-- ! Add what tools aided you -->
