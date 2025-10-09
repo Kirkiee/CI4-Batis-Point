@@ -26,4 +26,9 @@ class Users extends BaseController
     {
         return view('user/roadmapPage');
     }
+
+    public function employeeCreation()
+    {
+        return view('user/employeeCreationPage');
+    }
 }
