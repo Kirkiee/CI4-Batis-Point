@@ -19,8 +19,9 @@
 
     <div class="bg-white shadow-lg rounded-xl w-full max-w-md p-8">
         <!-- Logo -->
-        <div class="flex justify-center mb-6">
+        <div class="flex flex-col items-center mb-6">
             <img src="<?= ('assets/images/logo.jpg'); ?>" alt="Batis Point Logo" class="w-16 h-16 rounded-full">
+            <a href="http://localhost:8090/" class="mt-4 inline-block px-4 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50 transition" style="font-family: Helvetica, Arial, sans-serif;">Back to home</a>
         </div>
 
         <h2 class="text-2xl font-bold text-center mb-6 text-hunter" style="color:#355E3B;">Admin Login</h2>
