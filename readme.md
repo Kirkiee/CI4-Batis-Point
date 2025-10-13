@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://github.com/Kirkiee">
-    <img src="backend/public/assets/img/logo.jpg" alt="Nyebe" width="130" height="100">
+    <img src="backend/public/assets/images/logo.jpg" alt="Nyebe" width="130" height="100">
   </a>
 <!-- * Title Section -->
   <h3 align="center">AD - CI4 Template</h3>
