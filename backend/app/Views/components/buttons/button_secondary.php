@@ -1,28 +1,31 @@
 <?php
-// Page: components/button/button_secondary
-// Data contract:
-// $disable: boolean | null
-// $href: string | null
-// $label: string | null
-// $dark: string | null
-?>
-<?php
 // Compact secondary button
-$href = esc($href ?? '#');
-$label = esc($label ?? 'Secondary');
-$font = 'font-family: Helvetica, Arial, sans-serif;';
+// Data contract: $disable, $href, $label, $dark
+
+$hrefOut = esc($href ?? '#');
+$labelOut = esc($label ?? 'Secondary');
+$font = 'font-family: Poppins, Helvetica, Arial, sans-serif; font-weight: 500; letter-spacing: 0.2px;';
+
+// Moodboard color palette
+$forest = '#355E3B'; // deep green
+$moss = '#9EC590';   // soft moss
+$gold = '#F1B24A';   // warm gold
+$petal = '#FCFFF1';  // light neutral
+
 if ($disable ?? false) {
-    $classes = 'inline-block px-4 py-2 rounded shadow text-white bg-[#C2A800] opacity-50 cursor-not-allowed';
+    $classes = 'inline-block px-5 py-2.5 rounded-full shadow bg-opacity-50 text-white bg-[var(--bp-gold)] cursor-not-allowed';
     $attrs = 'aria-disabled="true" tabindex="-1"';
     $hrefOut = '#';
 } elseif ($dark ?? false) {
-    $classes = 'inline-block px-4 py-2 rounded shadow text-white bg-[#C2A800] hover:bg-[#a58e00] transition duration-150';
+    // Dark mode: forest text with gold base
+    $classes = 'inline-block px-5 py-2.5 rounded-full shadow text-[var(--bp-forest)] bg-[var(--bp-gold)] hover:bg-[#FFD16A] hover:shadow-lg transition duration-200';
     $attrs = '';
-    $hrefOut = $href;
 } else {
-    $classes = 'inline-block px-4 py-2 rounded shadow text-[#1F3D2A] bg-[#E4D00A] hover:bg-[#d6c900] transition duration-150';
+    // Light mode: gold base with forest text, hover to moss
+    $classes = 'inline-block px-5 py-2.5 rounded-full shadow text-[var(--bp-forest)] bg-[var(--bp-gold)] hover:bg-[var(--bp-moss)] hover:text-[var(--bp-forest)] hover:shadow-lg transition duration-200';
     $attrs = '';
-    $hrefOut = $href;
 }
 ?>
-<a href="<?= $hrefOut ?>" class="<?= $classes ?>" style="<?= $font ?>" <?= $attrs ?>><?= $label ?></a>
+<a href="<?= $hrefOut ?>" class="<?= $classes ?>" style="<?= $font ?>" <?= $attrs ?>>
+    <?= $labelOut ?>
+</a>
