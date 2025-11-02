@@ -14,7 +14,7 @@
                 class="px-5 py-2 rounded-full bg-[#F1B24A] text-[#1F3D2A] font-poppins font-medium hover:bg-[#d99c3d] transition duration-200 shadow-md">
                 Moodboard
             </a>
-            <a href="<?= ('/roadmap'); ?>"
+            <a href="<?= ('/roadmapPage'); ?>"
                 class="px-5 py-2 rounded-full border border-[#9EC590] text-[#FCFFF1] font-poppins font-medium hover:bg-[#9EC590]/20 transition duration-200">
                 Roadmap
             </a>
