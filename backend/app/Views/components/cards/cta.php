@@ -1,8 +1,17 @@
-<section class="relative flex flex-col justify-center items-center bg-cover bg-center h-screen text-center" style="background-image: url('<?= ('assets/images/Background3.jpg'); ?>');">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="z-10 relative px-4 max-w-3xl">
-        <h1 class="mb-4 font-bold text-citrine text-5xl md:text-6xl" style="color:#E4D00A;">Batis Point</h1>
-        <p class="mb-6 text-gray-100 text-lg md:text-xl">Your Private Camping Escape — Experience nature, uninterrupted.</p>
-        <a href="#inquiry" class="bg-hunter hover:bg-opacity-90 px-6 py-3 rounded-lg font-semibold text-gray-100 transition" style="background-color:#355E3B;">Book Your Stay</a>
+<!-- Call to Action Section -->
+<section class="relative bg-[#FCFFF1] py-10 text-center overflow-hidden">
+    <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-4xl font-proza font-semibold text-[#355E3B] mb-4">
+            Your Private Escape Awaits
+        </h2>
+        <p class="text-gray-700 mb-10 leading-relaxed">
+            Unwind beneath the trees, beside the springs, and under a sky full of stars.
+            Batis Point is where tranquility and togetherness meet.
+        </p>
+        <a href="<?= ('inquire'); ?>"
+            class="bg-[#F1B24A] hover:bg-[#e19c2d] text-[#355E3B] font-semibold px-8 py-3 rounded-xl shadow-md transition inline-block">
+            Book Your Stay Now
+        </a>
     </div>
+
 </section>
