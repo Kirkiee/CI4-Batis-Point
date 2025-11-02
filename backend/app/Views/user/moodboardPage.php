@@ -118,8 +118,8 @@
                 <h3 class="font-semibold mb-3">Dark Mode</h3>
                 <div class="flex flex-wrap gap-4 bg-[var(--bp-forest)] p-4 rounded-lg w-fit">
                     <?= view('components/buttons/button_primary', ['label' => 'Primary', 'href' => '#', 'dark' => true]) ?>
-                    <?= view('components/buttons/button_secondary', ['label' => 'Secondary', 'href' => '#', 'dark' => true]) ?>
-                    <?= view('components/buttons/button_border', ['label' => 'Border', 'href' => '#', 'dark' => true]) ?>
+                    <?= view('components/buttons/button_secondary', ['label' => 'Secondary', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_border', ['label' => 'Border', 'href' => '#']) ?>
                     <?= view('components/buttons/button_primary', ['label' => 'Disabled', 'href' => '#', 'disable' => true]) ?>
                 </div>
             </div>
