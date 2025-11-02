@@ -16,37 +16,50 @@
             theme: {
                 extend: {
                     colors: {
-                        citrine: '#E3B505',
-                        forest: '#1A4314',
-                        stone: '#D6D6D6',
-                        lightstone: '#F5F5F5',
+                        hunter: '#355E3B',
+                        moss: '#9EC590',
+                        citrine: '#F1B24A',
+                        cream: '#FCFFF1',
+                        stone: '#EDEDE9',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+                        proza: ['"Proza Libre"', 'serif'],
+                        poppins: ['"Poppins"', 'sans-serif'],
                     },
                     boxShadow: {
-                        subtle: '0 2px 6px rgba(0, 0, 0, 0.06)',
+                        soft: '0 4px 12px rgba(0, 0, 0, 0.06)',
                     }
                 }
             }
         }
     </script>
+
+    <!-- ✅ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Proza+Libre:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <?= view('components/header') ?>
 
-<body class="bg-white font-sans text-slate-800">
-    <main class="mx-auto max-w-6xl px-6 py-12">
-        <!-- Header -->
-        <header class="mb-12">
-            <h1 class="text-3xl font-bold text-forest tracking-tight">Road Map</h1>
-            <p class="text-slate-600 mt-1">A visual overview of features currently planned and in progress.</p>
+<body class="bg-cream font-poppins text-gray-800">
+
+    <main class="relative mx-auto max-w-6xl px-6 py-20">
+        <!-- Page Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl font-proza font-bold text-hunter">Road Map</h1>
+            <p class="mt-3 text-gray-600 text-base max-w-2xl mx-auto">
+                A visual overview of Batis Point’s upcoming features and enhancements — see what’s planned, in progress, and completed.
+            </p>
         </header>
 
+        <!-- Decorative Divider -->
+        <div class="flex justify-center mb-12">
+            <div class="h-1 w-24 bg-citrine rounded-full"></div>
+        </div>
+
         <!-- Filter -->
-        <div class="flex justify-end mb-6">
+        <div class="flex justify-end mb-8">
             <select id="statusFilter"
-                class="border border-stone bg-white rounded-lg text-sm px-3 py-1.5 focus:ring-2 focus:ring-citrine focus:outline-none">
+                class="border border-gray-300 bg-white text-gray-700 rounded-lg text-sm px-3 py-2 focus:ring-2 focus:ring-citrine focus:outline-none shadow-sm">
                 <option value="all">All</option>
                 <option value="planned">Planned</option>
                 <option value="in-progress">In Progress</option>
@@ -58,15 +71,13 @@
         <!-- Roadmap Grid -->
         <section id="roadmapList" class="relative grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-            <!-- Road Path (background arrows / road lines) -->
+            <!-- Subtle Road Line (Visual Flow) -->
             <div class="absolute inset-0 z-0 flex items-center justify-center">
-                <div
-                    class="hidden md:block h-full w-px bg-gradient-to-b from-citrine via-stone to-forest opacity-30 pointer-events-none">
-                </div>
+                <div class="hidden md:block h-full w-px bg-gradient-to-b from-citrine via-moss to-hunter opacity-30 pointer-events-none"></div>
             </div>
 
             <!-- Cards -->
-            <div class="relative z-10 col-span-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div class="relative z-10 col-span-full grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <?= view('components/cards/roadmap_cards', [
                     'title' => 'Admin Dashboard',
                     'excerpt' => 'Allows admins to manage rates, edit listings, and update gallery.',
@@ -75,8 +86,8 @@
                 ]) ?>
 
                 <?= view('components/cards/roadmap_cards', [
-                    'title' => 'Service CRUD',
-                    'excerpt' => 'Add, update, or remove service rates and descriptions.',
+                    'title' => 'Gallery CRUD',
+                    'excerpt' => 'Add, update, or remove Gallery pictures.',
                     'priority' => 'High',
                     'status' => 'In Progress'
                 ]) ?>
@@ -89,21 +100,23 @@
                 ]) ?>
 
                 <?= view('components/cards/roadmap_cards', [
-                    'title' => 'Request CRUD',
+                    'title' => 'Inquiry CRUD',
                     'excerpt' => 'Allows clients to modify or delete their inquiries after submission.',
-                    'priority' => 'Low',
+                    'priority' => 'Medium',
                     'status' => 'Planned'
                 ]) ?>
 
                 <?= view('components/cards/roadmap_cards', [
-                    'title' => 'Waze Integration',
+                    'title' => 'Google Maps Addition',
                     'excerpt' => 'Enables direct navigation from the landing page to Batis Point’s location.',
                     'priority' => 'Low',
-                    'status' => 'Backlog'
+                    'status' => 'Backlog' //placeholder for backlog's design (actually planned XD)
                 ]) ?>
             </div>
         </section>
     </main>
+
+    <?= view('components/footer') ?>
 
     <script>
         // Filtering Logic
@@ -120,8 +133,7 @@
             });
         })();
     </script>
-</body>
 
-<?= view('components/footer') ?>
+</body>
 
 </html>

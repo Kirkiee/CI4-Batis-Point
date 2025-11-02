@@ -31,35 +31,12 @@
 <body class="text-gray-800">
 
     <!-- Hero Section -->
-    <section class="relative h-[90vh] flex flex-col items-center justify-center text-center px-6 bg-cover bg-center"
+    <section class="relative h-[67vh] flex flex-col items-center justify-center text-center px-6 bg-cover bg-center"
         style="background-image: url('assets/images/batis2.jpg');">
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div> <!-- subtle overlay for text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div> <!-- subtle overlay  -->
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="relative bg-[#FCFFF1] py-24 text-center overflow-hidden">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-4xl font-proza font-semibold text-[#355E3B] mb-4">
-                Your Private Escape Awaits
-            </h2>
-            <p class="text-gray-700 mb-10 leading-relaxed">
-                Unwind beneath the trees, beside the springs, and under a sky full of stars.
-                Batis Point is where tranquility and togetherness meet.
-            </p>
-            <a href="<?= ('inquire'); ?>"
-                class="bg-[#F1B24A] hover:bg-[#e19c2d] text-[#355E3B] font-semibold px-8 py-3 rounded-xl shadow-md transition inline-block">
-                Book Your Stay Now
-            </a>
-        </div>
-        <!-- Soft wave divider -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-20 text-[#FCFFF1]" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 120">
-                <path d="M0,0V46.29c47.87,22.2,98.7,29,146.6,17,48.7-12.19,90.3-43.46,139-55.44C375.4-6.77,428.1,4.8,478,22.45
-            c61,21.81,117.3,57.47,178,73.59,51.3,13.6,104.1,9.4,155.6-4.9,60.5-17.2,113.3-49.1,172-61.6,30.2-6.2,61.1-6.2,91.3,1V0Z"
-                    fill="#FCFFF1"></path>
-            </svg>
-        </div>
-    </section>
+    <?= view('components/cards/cta'); ?>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
