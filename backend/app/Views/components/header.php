@@ -20,6 +20,10 @@
                 class="px-5 py-2 rounded-full bg-[#355E3B] text-[#FCFFF1] shadow-md hover:bg-[#F1B24A] hover:text-[#1F3D2A] transition duration-200">
                 Inquire
             </a>
+            <a href="<?= ('Inclusions'); ?>"
+                class="px-5 py-2 rounded-full bg-[#355E3B] text-[#FCFFF1] shadow-md hover:bg-[#F1B24A] hover:text-[#1F3D2A] transition duration-200">
+                Inclusions
+            </a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -32,6 +36,7 @@
     <div id="mobileMenu" class="hidden md:hidden bg-gradient-to-b from-[#355E3B] to-[#4D774E] shadow-inner border-t border-[#9EC590]/30">
         <a href="<?= ('gallery'); ?>" class="block hover:bg-[#9EC590]/20 px-6 py-3 border-b border-[#9EC590]/30 text-[#FCFFF1]">Gallery</a>
         <a href="<?= ('inquire'); ?>" class="block hover:bg-[#9EC590]/20 px-6 py-3 border-b border-[#9EC590]/30 text-[#FCFFF1]">Inquire</a>
+        <a href="<?= ('Inclusions'); ?>" class="block hover:bg-[#9EC590]/20 px-6 py-3 border-b border-[#9EC590]/30 text-[#FCFFF1]">Inclusions</a>
     </div>
 </header>
 
