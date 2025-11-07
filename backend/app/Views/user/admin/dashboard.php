@@ -1,5 +1,5 @@
 <?php
-// Page: admin/adminDashboard.php
+// Page: admin/admindashboard.php
 ?>
 <!DOCTYPE html>
 <html lang="en">
