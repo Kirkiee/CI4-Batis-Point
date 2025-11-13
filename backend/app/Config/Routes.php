@@ -13,10 +13,12 @@ $routes->get('/roadmap', 'Users::showRoadmap');
 
 // Auth page
 $routes->get('/login', 'Auth::showLoginPage');
+$routes->get('/signup', 'Auth::showSignupPage');
 
 // Auth actions (Employees Only)
-$routes->post('login', 'Auth::login');
-$routes->post('logout', 'Auth::logout');
+$routes->post('/login', 'Auth::login');
+$routes->post('/logout', 'Auth::logout');
+$routes->post('/signup', 'Auth::signup');
 
 // (Admin Only)
 $routes->post('/admin/employeeCreation', 'Users::showEmployeeCreation');
