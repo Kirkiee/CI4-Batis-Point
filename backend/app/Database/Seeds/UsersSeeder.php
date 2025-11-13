@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
         $now = date('Y-m-d H:i:s');
         $password = password_hash('Password123!', PASSWORD_DEFAULT);
 
-        $userinfo = [
+        $users = [
             [
                 'first_name' => 'Justin Kirk',
                 'middle_name' => 'Oliveros',
@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
                 'email' => 'justinkirkendozo@gmail.com',
                 'password_hash' => 'Kulasa17',
                 'account_status' => '1',
-                'type' => 'manager',
+                'type' => 'admin',
                 'gender' => 'Male',
                 'created_at' => $now,
                 'updated_at' => $now,
@@ -40,6 +40,6 @@ class UsersSeeder extends Seeder
                 'updated_at' => $now,
             ]
         ];
-        $this->db->table('admintable')->insertBatch($userinfo);
+        $this->db->table('users')->insertBatch($users);
     }
 }
